@@ -1,10 +1,11 @@
 const { ethers } = require('ethers');
 
-const providerUrl = 'https://bsc.publicnode.com';
+const providerUrl = 'https://opbnb-mainnet-rpc.bnbchain.org';    //RPC节点
 const provider = new ethers.providers.JsonRpcProvider(providerUrl);
 const privateKey = 'Private Key 私钥';  //修改这里
 const wallet = new ethers.Wallet(privateKey, provider);
-const contractAddress = '0xd45f35D17F67FdFd9f73a9cd248A16a8A38f683C'; 
+const contractAddress = '0x658c3941eae10398da5456951cdaf795984d106b';     //LongInscriber Contract
+
 
 function sleep(time) {
     return new Promise(resolve => setTimeout(resolve, time));
@@ -24,7 +25,7 @@ async function getCurrentNonce(wallet) {
 async function sendData() {
     let nonce = 0;
     let currentGasPrice = 0;
-    for (let i = 0; i < 1000; i++) {    // 循环次数
+    for (let i = 0; i < 10000; i++) {    // 循环次数
         try {
             let j = i % 20;
             if(j == 0) {
@@ -33,7 +34,7 @@ async function sendData() {
             }
             const tx = await wallet.sendTransaction({
                 to: contractAddress,
-                value: ethers.utils.parseEther("0.002"), 
+                value: ethers.utils.parseEther("0.00025"), 
                 gasPrice: currentGasPrice,
                 nonce: nonce + j
             });
