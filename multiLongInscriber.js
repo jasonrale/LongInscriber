@@ -4,7 +4,7 @@ const providerUrl = 'https://opbnb-mainnet-rpc.bnbchain.org';    //RPC节点
 const provider = new ethers.providers.JsonRpcProvider(providerUrl);
 const privateKey = 'Private Key 私钥';  //修改这里
 const wallet = new ethers.Wallet(privateKey, provider);
-const contractAddress = '0x658c3941eae10398da5456951cdaf795984d106b';     //LongInscriber Contract
+const contractAddress = '0x4360B2EaA89a88C09B684E6bf4b8569ff624572C';     //LongInscriber Contract
 
 
 function sleep(time) {
