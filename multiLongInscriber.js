@@ -25,7 +25,8 @@ async function getCurrentNonce(wallet) {
 async function sendData() {
     let nonce = 0;
     let currentGasPrice = 0;
-    for (let i = 0; i < 10000; i++) {    // 循环次数
+    let amount = 10000;  // 循环次数
+    for (let i = 0; i < amount; i++) {    
         try {
             let j = i % 20;
             if(j == 0) {
