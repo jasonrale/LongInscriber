@@ -1,4 +1,4 @@
-# multiLongInscriber
+# LongInscriber
 需要下载Node.js才能使用  
 Node.js下载地址：https://nodejs.org/en/download  
 
